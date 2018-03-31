@@ -1,11 +1,14 @@
 ..\output\main.o: ..\User\main.c
 ..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\output\main.o: ..\Library\myLib\systemclockset.h
+..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\main.o: ..\Library\myLib\systemlog.h
+..\output\main.o: ..\SYSTEM\usart\usart.h
 ..\output\main.o: ..\SYSTEM\sys\sys.h
 ..\output\main.o: ..\User\stm32f7xx.h
 ..\output\main.o: ..\User\stm32f767xx.h
 ..\output\main.o: ..\Core\core_cm7.h
-..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\main.o: ..\Core\core_cmInstr.h
 ..\output\main.o: ..\Core\cmsis_armcc.h
 ..\output\main.o: ..\Core\core_cmFunc.h
@@ -77,5 +80,3 @@
 ..\output\main.o: ..\Driver\Inc\stm32f7xx_hal_mdios.h
 ..\output\main.o: ..\Core\core_cm7.h
 ..\output\main.o: ..\Driver\Inc\stm32f7xx_hal.h
-..\output\main.o: ..\SYSTEM\delay\delay.h
-..\output\main.o: ..\SYSTEM\usart\usart.h

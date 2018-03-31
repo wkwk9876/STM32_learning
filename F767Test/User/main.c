@@ -1,26 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "sys.h"
-#include "delay.h"
+#include "systemclockset.h"
+#include "systemlog.h"
+//#include "sys.h"
+//#include "delay.h"
 #include "usart.h" 
 
 void Delay(__IO uint32_t nCount);
 void Delay(__IO uint32_t nCount)
 {
-while(nCount--){}
+    while(nCount--){}
 }
 
 int main(void)
 {
 	GPIO_InitTypeDef                GPIO_Initure;
 
-	Cache_Enable();                 //打开L1-Cache
-	HAL_Init();				        //初始化HAL库
-	Stm32_Clock_Init(432,25,2,9);   //设置时钟,216Mhz 
-	__HAL_RCC_GPIOB_CLK_ENABLE();   //开启GPIOB时钟
-    delay_init(216);                //延时初始化
-    uart_init(115200);		        //串口初始化
+	SystemCache_Enable();                   //打开L1-Cache
+	HAL_Init();				                //初始化HAL库
+	SystemClock_Config(25, 432, 2, 9);      //设置时钟,216Mhz 
+	__HAL_RCC_GPIOB_CLK_ENABLE();           //开启GPIOB时钟
+    uart_init(115200);		                //串口初始化
 
 	GPIO_Initure.Pin =      GPIO_PIN_0|GPIO_PIN_1;  //PB1,0
 	GPIO_Initure.Mode =     GPIO_MODE_OUTPUT_PP;    //推挽输出

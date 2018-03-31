@@ -65,6 +65,8 @@
 "..\output\stm32f7xx_ll_fmc.o"
 "..\output\stm32f7xx_ll_sdmmc.o"
 "..\output\stm32f7xx_ll_usb.o"
+"..\output\systemclockset.o"
+"..\output\systemlog.o"
 "..\output\main.o"
 "..\output\stm32f7xx_hal_msp.o"
 "..\output\stm32f7xx_it.o"
