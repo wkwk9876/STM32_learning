@@ -28,19 +28,23 @@ int main(void)
 	GPIO_Initure.Pull =     GPIO_PULLUP;            //上拉
 	GPIO_Initure.Speed =    GPIO_SPEED_HIGH;        //高速
 	HAL_GPIO_Init(GPIOB,&GPIO_Initure);
+    
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0 | GPIO_PIN_1, GPIO_PIN_RESET);
+    Delay(0x1FFFFFF);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0 | GPIO_PIN_1, GPIO_PIN_SET);
 
 	while(1)
 	{
-        printf("1\r\n");
+        __PRINT_LOG__(__CRITICAL_LEVEL__, "1\r\n");
 		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET);	//PB1置1		
 		Delay(0x1FFFFFF);
-        printf("2\r\n");
+        __PRINT_LOG__(__CRITICAL_LEVEL__, "2\r\n");
 		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET);	//PB1置0
         Delay(0x1FFFFFF);
-        printf("3\r\n");
+        __PRINT_LOG__(__CRITICAL_LEVEL__, "3\r\n");
         HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_SET);	//PB0置1
         Delay(0x1FFFFFF);
-        printf("4\r\n");
+        __PRINT_LOG__(__CRITICAL_LEVEL__, "4\r\n");
 		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_RESET);	//PB0置0
 		Delay(0x1FFFFFF);
 	}

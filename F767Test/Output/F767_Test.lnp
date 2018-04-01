@@ -74,7 +74,7 @@
 "..\output\delay.o"
 "..\output\sys.o"
 "..\output\usart.o"
---library_type=microlib --strict --scatter "..\Output\F767_Test.sct"
+--strict --scatter "..\Output\F767_Test.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\F767_Test.map" -o ..\Output\F767_Test.axf
